@@ -1,2 +1,1 @@
-# 2564. Substring XOR Queries (medium)
-
+### 2564. Substring XOR Queries (medium)
