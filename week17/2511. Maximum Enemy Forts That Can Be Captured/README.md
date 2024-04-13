@@ -1,44 +1,43 @@
-### 2511. Maximum Enemy Forts That Can Be Captured (easy)
+## 2511. Maximum Enemy Forts That Can Be Captured
 
-### 2256. Minimum Average Difference (medium)
-
-### 2487. Remove Nodes From Linked List (medium)
-
-## 139. Word Break
-
-🔗 Link: [Word Break](https://leetcode.com/problems/word-break/description/)<br>
-💡 Difficulty: Medium<br>
-🛠️ Topics: Array, DP<br>
+📎 Link: [Maximum Enemy Forts That Can Be Captured](https://leetcode.com/problems/maximum-enemy-forts-that-can-be-captured/description/)<br>
+🟢 Difficulty: Easy<br>
+👩🏻‍💻 Topics: Array, Two Pointers<br>
 
 =======================================================================================<br>
-Given a string `s` and a dictionary of strings `wordDict`, return `true` if `s` can be segmented into a space-separated sequence of one or more dictionary words.
 
-Note that the same word in the dictionary may be reused multiple times in the segmentation.
+You are given a 0-indexed integer array forts of length n representing the positions of several forts. forts[i] can be -1, 0, or 1 where:<br>
 
-<br>
+- -1 represents there is no fort at the ith position.
+- 0 indicates there is an enemy fort at the ith position.
+- 1 indicates the fort at the ith the position is under your command.<br>
+
+Now you have decided to move your army from one of your forts at position i to an empty position j such that:<br>
+
+- 0 <= i, j <= n - 1
+- The army travels over enemy forts only. Formally, for all k where min(i,j) < k < max(i,j), forts[k] == 0.<br>
+  While moving the army, all the enemy forts that come in the way are captured.<br>
+
+Return the maximum number of enemy forts that can be captured. In case it is impossible to move your army, or you do not have any fort under your command, return 0.<br>
 
 Example 1:<br>
-Input: s = "leetcode", wordDict = ["leet","code"]<br>
-Output: true<br>
-Explanation: Return true because "leetcode" can be segmented as "leet code".<br>
+Input: forts = [1,0,0,-1,0,0,0,0,1]<br>
+Output: 4<br>
+Explanation:<br>
+
+- Moving the army from position 0 to position 3 captures 2 enemy forts, at 1 and 2.
+- Moving the army from position 8 to position 3 captures 4 enemy forts.<br>
+  Since 4 is the maximum number of enemy forts that can be captured, we return 4.<br>
 
 Example 2:<br>
-Input: s = "applepenapple", wordDict = ["apple","pen"]<br>
-Output: true<br>
-Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".<br>
-Note that you are allowed to reuse a dictionary word.<br>
-
-Example 3:<br>
-Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]<br>
-Output: false<br>
+Input: forts = [0,0,1,-1]<br>
+Output: 0<br>
+Explanation: Since no enemy fort can be captured, 0 is returned.<br>
 
 Constraints:<br>
 
-- 1 <= s.length <= 300
-- 1 <= wordDict.length <= 1000
-- 1 <= wordDict[i].length <= 20
-- s and wordDict[i] consist of only lowercase English letters.
-- All the strings of wordDict are unique.<br>
+- 1 <= forts.length <= 1000
+- -1 <= forts[i] <= 1
 
 =======================================================================================<br>
 
@@ -52,44 +51,45 @@ Constraints:<br>
 
 1. Any requirement on time/space complexity?
 
-- O(N^3) in time and O(N) in space
-
-2. Can there be multiple valid solutions?
-
-- Yes, there may be multiple valid solutions. If so, the end result will still be the same, so the specific solution path does not matter much.
+- No
 
 ### Match
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1.  Dymanic Programming <br>
-    - **DP builds up the solution by considering smaller subproblems**. It explores all combinations, ensuring that the global optimal solution is found
-    - The intuition behind this approach is that the given problem (s) can be divided into subproblems s1 and s2. If these subproblems individually satisfy the required conditions, the complete problem, s also satisfies the same. e.g. "catsanddog" can be split into two substrings "catsand", "dog". The subproblem "catsand" can be further divided into "cats","and", which individually are a part of the dictionary making "catsand" satisfy the condition
+1.  Recursion<br>
+
+- **Recursion is a programming technique where a function calls itself in its own definition**. It's a concept used to solve problems by breaking them down into smaller instances of the same problem until reaching a base case.
+- The intuition behind recursion is to solve complex problems by dividing them into more manageable subproblems. Each recursive call operates on a smaller input, and the results of these calls are combined to solve the original problem. Recursion is particularly useful for problems that exhibit self-similarity or can be naturally expressed in terms of smaller instances of themselves.
 
 ### Plan
 
 > - Sketch visualizations and write pseudocode
 > - Walk through a high level implementation with an existing diagram
 
-General Idea: Use a DP Array to check if any substring from i -> j is in the word bank. Build up this solution to the last index of the input string (Bottom-Up Approach). In this case, the subproblem is determining if a prefix of the string can be segmented into words from the dictionary
+General Idea: Use Prefix Sum to pre calculate a total sum and quickly calculate the sum of any subarray by simply subtracting two cumulative sums. Calculate the absolute differences and replace the minimum each time.
 
-1. Convert Dictionary to Set
+1. Pre calculate the total:
 
-- Convert the list of dictionary words (`wordDict`) into a set (`wordSet`) for efficient look-up operations
+- Initiate a for-loop to calculate sum of the entire Array and assign to a variable.
 
-2. Initialize Dynamic Programming Array
+2. Calculate sum of subarrays:
 
-- Create a boolean array `dp` of length `len(s) + 1`, where each element `dp[i]` indicates whether the `substring s[:i]` can be segmented into words from `wordSet`. Initialize `dp[0]` to `True` to represent that an empty string is considered segmentable.
+- Initiate another for-loop to calculate the subarrays. Calculate the left subarray starting far left and move towards the right. Each time calculate the right subarray utilizing the pre-calculated total.
 
-3. Iterate Over the String
+3. Handle when divisor is zero:
 
-- For each position `i` in the string `s` (starting from 1 to len(s)), perform the following steps:
-  - Check for Word Matches: Iterate through each word in `wordSet` and for each word, check if the word can fit ending at position i in the string s. This involves checking if `dp[i - wordLen]` is `True` (indicating that the substring `s[:i - wordLen]` can be segmented) and if the substring `s[i - wordLen:i]` matches the current word from `wordSet`.
-  - Update DP Array: If both conditions are met, set `dp[i]` to `True`, indicating that `s[:i]` can be segmented into dictionary words. Once `dp[i]` is set to `True`, break the inner loop to avoid unnecessary checks for this position `i`.
+- The divisor(rightCount) for calculating the right subarray will always end up being zero. Handle the case with ternary operator (i == length - 1 ? 1 : rightCount).
+- The expression to evaluate when the condition is true could be any number, since the rightSum would be zero as well.
 
-4. Return Result:
+4. Calculate absolute difference:
 
-- After completing the iterations, return the value of `dp[-1]`. This value indicates whether the entire string s can be segmented into a sequence of dictionary words. If `dp[-1]` is `True`, it means s can be fully segmented using the words in the dictionary. If it's `False`, s cannot be segmented entirely using the dictionary words.
+- After computing both left and right average, calculate the abosulte difference.
+
+5. Replace the minimum difference:
+
+- Compare the current difference with the stored minimum difference each time and replace with the smaller one.
+- Keep track of the index and return.
 
 ### Implement
 
@@ -107,7 +107,5 @@ see solution.py
 > - Finish by giving space and run-time complexity
 > - Discuss any pros and cons of the solution
 
-Assume `N` is the length of the input string
-
-- Time Complexity: O(N^3)
-- Space Complexity: O(N)
+- Time Complexity: O(N)
+- Space Complexity: O(1)
