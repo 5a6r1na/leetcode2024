@@ -86,10 +86,10 @@ General Idea: Recursively call removeNodes() to check if the current node (head)
 
 - Inside the recursive call, removeNodes is called on the next node (head.next). This recursively traverses the linked list until the base case is reached.
 
-3. Check if the current node should be removed:
+3. Create Monotonic stack concept with condition check:
 
-- Define the condition that the next node(head.next) is greater than the current node(head).
-- If true, remove current node and return next node, else return current node.
+- Define the condition to decide whether to remove the current node,
+- When next node(head.next) is greater than current node(head) remove current node and return next node, else return current node.
 
 ### Implement
 
@@ -109,3 +109,8 @@ see solution.py
 
 - Time Complexity: O(N)
 - Space Complexity: O(N)
+
+Solution: recursion vs monotonic stack
+
+- Pros: Using recursive avoids the difficulty of maintaing a tree-like structure such as Linked list.
+- Cons: More use of Time and Space Complexity.
