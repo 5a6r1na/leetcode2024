@@ -57,39 +57,43 @@ Constraints:<br>
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1.  Recursion<br>
+1. [Two Pointers](https://www.geeksforgeeks.org/two-pointers-technique/)<br>
 
-- **Recursion is a programming technique where a function calls itself in its own definition**. It's a concept used to solve problems by breaking them down into smaller instances of the same problem until reaching a base case.
-- The intuition behind recursion is to solve complex problems by dividing them into more manageable subproblems. Each recursive call operates on a smaller input, and the results of these calls are combined to solve the original problem. Recursion is particularly useful for problems that exhibit self-similarity or can be naturally expressed in terms of smaller instances of themselves.
+- **Two pointers algorithm is typically used for searching pairs in a sorted array.**. Two pointers approach optimizes code via time complexities conpare to loops.
+- The intuition behind Two Pointers is to traverse the array simultaneously. With pointers typically move at different speeds or in different directions.
+
+- Efficieny compared with Loop:
+  - Loop:
+    - Time Complexity: O(N^2)
+    - Space Complexity: O(1)
+  - Two Pointer:
+    - Time Complexity: O(N)
+    - Space Complexity: O(1)
 
 ### Plan
 
 > - Sketch visualizations and write pseudocode
 > - Walk through a high level implementation with an existing diagram
 
-General Idea: Use Prefix Sum to pre calculate a total sum and quickly calculate the sum of any subarray by simply subtracting two cumulative sums. Calculate the absolute differences and replace the minimum each time.
+General Idea: Use Two Pointers to run through the array.
 
-1. Pre calculate the total:
+1. Initialize Two Pointers:
 
-- Initiate a for-loop to calculate sum of the entire Array and assign to a variable.
+- Left pointer at position 0 and right pointer at i.
 
-2. Calculate sum of subarrays:
+2. Initiate for loop and check condition:
 
-- Initiate another for-loop to calculate the subarrays. Calculate the left subarray starting far left and move towards the right. Each time calculate the right subarray utilizing the pre-calculated total.
+- Iterate through each element to check if:
+  - Current position(fort[i]) is not zero(enemy fort).
+  - Left and Right pointer have different values, to indicate a capture action.
 
-3. Handle when divisor is zero:
+3. Calculate distance and keep track:
 
-- The divisor(rightCount) for calculating the right subarray will always end up being zero. Handle the case with ternary operator (i == length - 1 ? 1 : rightCount).
-- The expression to evaluate when the condition is true could be any number, since the rightSum would be zero as well.
+- Calculate the distance between Left and Right pointer to represent the number of enemies captured. Keep track of the current max and replace.
 
-4. Calculate absolute difference:
+4. Update Left pointer position:
 
-- After computing both left and right average, calculate the abosulte difference.
-
-5. Replace the minimum difference:
-
-- Compare the current difference with the stored minimum difference each time and replace with the smaller one.
-- Keep track of the index and return.
+- When Right pointer is not zero, update the Left pointer accordingly to indicate a new round of capture.
 
 ### Implement
 
