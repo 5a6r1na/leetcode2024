@@ -47,39 +47,49 @@ Constraints:
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1.  Recursion<br>
+1.  [Recursion](https://www.geeksforgeeks.org/introduction-to-recursion-data-structure-and-algorithm-tutorials/) / [🎞️](https://www.youtube.com/watch?v=ivl5-snqul8)
 
 - **Recursion is a programming technique where a function calls itself in its own definition**. It's a concept used to solve problems by breaking them down into smaller instances of the same problem until reaching a base case.
-- The intuition behind recursion is to solve complex problems by dividing them into more manageable subproblems. Each recursive call operates on a smaller input, and the results of these calls are combined to solve the original problem. Recursion is particularly useful for problems that exhibit self-similarity or can be naturally expressed in terms of smaller instances of themselves.
+
+- **Recursion uses more memory**, because the recursive function adds to the stack with each recursive call, and keeps the values there until the call is finished. The **recursive function uses LIFO Structure** (stack data structure).
+
+- Features:
+  - Performing the same operations multiple times with different inputs.
+  - Try smaller inputs to make the problem smaller in each step.
+  - Base condition is needed to stop the recursion otherwise infinite loop will occur.
+
+2. [Monotonic Stack](https://www.geeksforgeeks.org/introduction-to-monotonic-stack-data-structure-and-algorithm-tutorials/) / [🎞️](https://www.youtube.com/watch?v=Dq_ObZwTY_Q)
+
+- **A monotonic stack is a data structure whose elements (starting from the bottom) are monotonically increasing or decreasing.** The monotonic stack problem is mainly the previous/next smaller/larger problem. It maintains monotonicity while popping elements when a new item is pushed into the stack.
+
+- Features:
+  - It is a range of queries in an array situation
+  - The minima/maxima elements
+  - Elements popped from the monotonic stack, will never be utilised again.
+- Math:
+
+  - **monotonically increasing:** As x increases, y also increases always.
+  - **monotonically decreasing:** As x increases, y decreases always.
 
 ### Plan
 
 > - Sketch visualizations and write pseudocode
 > - Walk through a high level implementation with an existing diagram
 
-General Idea: Use Prefix Sum to pre calculate a total sum and quickly calculate the sum of any subarray by simply subtracting two cumulative sums. Calculate the absolute differences and replace the minimum each time.
+General Idea: Recursively call removeNodes() to check if the current node (head) should be removed. Implement the Monotonic Stack concept to remove nodes.
 
-1. Pre calculate the total:
+1. Define base case to prevent infinite loop:
 
-- Initiate a for-loop to calculate sum of the entire Array and assign to a variable.
+- Return null when no more nodes.
 
-2. Calculate sum of subarrays:
+2. Recursively call removeNodes():
 
-- Initiate another for-loop to calculate the subarrays. Calculate the left subarray starting far left and move towards the right. Each time calculate the right subarray utilizing the pre-calculated total.
+- Inside the recursive call, removeNodes is called on the next node (head.next). This recursively traverses the linked list until the base case is reached.
 
-3. Handle when divisor is zero:
+3. Check if the current node should be removed:
 
-- The divisor(rightCount) for calculating the right subarray will always end up being zero. Handle the case with ternary operator (i == length - 1 ? 1 : rightCount).
-- The expression to evaluate when the condition is true could be any number, since the rightSum would be zero as well.
-
-4. Calculate absolute difference:
-
-- After computing both left and right average, calculate the abosulte difference.
-
-5. Replace the minimum difference:
-
-- Compare the current difference with the stored minimum difference each time and replace with the smaller one.
-- Keep track of the index and return.
+- Define the condition that the next node(head.next) is greater than the current node(head).
+- If true, remove current node and return next node, else return current node.
 
 ### Implement
 
@@ -98,4 +108,4 @@ see solution.py
 > - Discuss any pros and cons of the solution
 
 - Time Complexity: O(N)
-- Space Complexity: O(1)
+- Space Complexity: O(N)
