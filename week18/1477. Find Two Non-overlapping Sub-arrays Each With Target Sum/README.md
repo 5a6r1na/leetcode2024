@@ -6,38 +6,32 @@
 
 =======================================================================================<br>
 
-You are given a 0-indexed integer array forts of length n representing the positions of several forts. forts[i] can be -1, 0, or 1 where:<br>
+You are given an array of integers arr and an integer target.<br>
 
-- -1 represents there is no fort at the ith position.
-- 0 indicates there is an enemy fort at the ith position.
-- 1 indicates the fort at the ith the position is under your command.<br>
+You have to find two non-overlapping sub-arrays of arr each with a sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum.<br>
 
-Now you have decided to move your army from one of your forts at position i to an empty position j such that:<br>
-
-- 0 <= i, j <= n - 1
-- The army travels over enemy forts only. Formally, for all k where min(i,j) < k < max(i,j), forts[k] == 0.<br>
-  While moving the army, all the enemy forts that come in the way are captured.<br>
-
-Return the maximum number of enemy forts that can be captured. In case it is impossible to move your army, or you do not have any fort under your command, return 0.<br>
+Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot find such two sub-arrays.<br>
 
 Example 1:<br>
-Input: forts = [1,0,0,-1,0,0,0,0,1]<br>
-Output: 4<br>
-Explanation:<br>
-
-- Moving the army from position 0 to position 3 captures 2 enemy forts, at 1 and 2.
-- Moving the army from position 8 to position 3 captures 4 enemy forts.<br>
-  Since 4 is the maximum number of enemy forts that can be captured, we return 4.<br>
+Input: arr = [3,2,2,4,3], target = 3<br>
+Output: 2<br>
+Explanation: Only two sub-arrays have sum = 3 ([3] and [3]). The sum of their lengths is 2.<br>
 
 Example 2:<br>
-Input: forts = [0,0,1,-1]<br>
-Output: 0<br>
-Explanation: Since no enemy fort can be captured, 0 is returned.<br>
+Input: arr = [7,3,4,7], target = 7<br>
+Output: 2<br>
+Explanation: Although we have three non-overlapping sub-arrays of sum = 7 ([7], [3,4] and [7]), but we will choose the first and third sub-arrays as the sum of their lengths is 2.<br>
+
+Example 3:<br>
+Input: arr = [4,3,2,6,2,3,4], target = 6<br>
+Output: -1<br>
+Explanation: We have only one sub-array of sum = 6.<br>
 
 Constraints:<br>
 
-- 1 <= forts.length <= 1000
-- -1 <= forts[i] <= 1
+- 1 <= arr.length <= 105
+- 1 <= arr[i] <= 1000
+- 1 <= target <= 108
 
 =======================================================================================<br>
 
