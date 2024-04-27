@@ -34,7 +34,7 @@ var reverse = function (x) {
   }
 
   let currArray = integerToArray(x);
-  //Join Array into string
+  // Join Array into string
   let str = reverseArray(currArray).join("");
   // parseInt and avoid extra zero
   let result = parseInt(str);
