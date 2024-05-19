@@ -40,9 +40,22 @@ Constraints:<br>
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1. [Two Pointers](https://www.geeksforgeeks.org/two-pointers-technique/)<br>
+1. [Stack](https://www.geeksforgeeks.org/two-pointers-technique/)<br>
 
 - **Two pointers algorithm is typically used for searching pairs in a sorted array.**. Two pointers approach optimizes code via time complexities conpare to loops.
+- The intuition behind Two Pointers is to traverse the array simultaneously. With pointers typically move at different speeds or in different directions.
+
+- Efficieny compared with Loop:
+  - Loop:
+    - Time Complexity: O(N^2)
+    - Space Complexity: O(1)
+  - Two Pointer:
+    - Time Complexity: O(N)
+    - Space Complexity: O(1)
+
+2. [Greedy](https://www.geeksforgeeks.org/greedy-algorithms/)<br>
+
+- **A greedy algorithm is a type of optimization algorithm that makes locally optimal choices at each step to find a globally optimal solution**
 - The intuition behind Two Pointers is to traverse the array simultaneously. With pointers typically move at different speeds or in different directions.
 
 - Efficieny compared with Loop:
