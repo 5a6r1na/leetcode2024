@@ -1,8 +1,8 @@
-## 1590. Make Sum Divisible by P
+## 2059. Minimum Operations to Convert Number
 
-📎 Link: [1590. Make Sum Divisible by P](https://leetcode.com/problems/make-sum-divisible-by-p/description/)<br>
+📎 Link: [Minimum Operations to Convert Number](https://leetcode.com/problems/minimum-operations-to-convert-number/description/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array, Hash Table, Prefix Sum<br>
+👩🏻‍💻 Topics: Array, Bread-First Search<br>
 
 =======================================================================================<br>
 Given an array of positive integers nums, remove the smallest subarray (possibly empty) such that the sum of the remaining elements is divisible by p. It is not allowed to remove the whole array.<br>
