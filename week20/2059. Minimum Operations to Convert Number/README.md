@@ -51,7 +51,7 @@ Constraints:<br>
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1.  Prefix Sum <br>
+1.  Bread-First Search <br>
 
 - **Prefix Sum(cumulative sum) is a technique use in array processing**. It involves generating an auxiliary array where each element represents the sum of all elements from the beginning of the input array up to that element.
 - The intuition behind this approach is that it allows for efficient computation of subarray sums. This technique is particularly useful in scenarios where we need to repeatedly query the sum of subarrays, such as in range sum queries or finding subarrays with a specific sum.
