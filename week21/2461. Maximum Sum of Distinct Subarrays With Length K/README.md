@@ -1,40 +1,8 @@
-## 2461. Maximum Sum of Distinct Subarrays With Length K
+## 796. Rotate String
 
-📎 Link: [Maximum Sum of Distinct Subarrays With Length K](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/)<br>
+📎 Link: [Rotate String](https://leetcode.com/problems/rotate-string/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array, Hash Table, Sliding Window<br>
-
-=======================================================================================<br>
-You are given an integer array nums and an integer k. Find the maximum subarray sum of all the subarrays of nums that meet the following conditions:<br>
-
-- The length of the subarray is k, and
-- All the elements of the subarray are distinct.
-
-Return the maximum subarray sum of all the subarrays that meet the conditions. If no subarray meets the conditions, return 0.<br>
-
-A subarray is a contiguous non-empty sequence of elements within an array.<br>
-
-<br>
-Example 1:<br>
-Input: nums = [3,1,4,2], p = 6<br>
-Output: 1<br>
-Explanation: The sum of the elements in nums is 10, which is not divisible by 6. We can remove the subarray [4], and the sum of the remaining elements is 6, which is divisible by 6.<br>
-<br>
-Example 2:<br>
-Input: nums = [6,3,5,2], p = 9<br>
-Output: 2<br>
-Explanation: We cannot remove a single element to get a sum divisible by 9. The best way is to remove the subarray [5,2], leaving us with [6,3] with sum 9.<br>
-<br>
-Example 3:<br>
-Input: nums = [1,2,3], p = 3<br>
-Output: 0<br>
-Explanation: Here the sum is 6. which is already divisible by 3. Thus we do not need to remove anything.<br>
-<br>
-Constraints:<br>
-
-- 1 <= nums.length <= 105
-- 1 <= nums[i] <= 109
-- 1 <= p <= 109
+👩🏻‍💻 Topics: String, String Matching<br>
 
 =======================================================================================<br>
 
