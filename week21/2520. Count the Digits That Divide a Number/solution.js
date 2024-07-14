@@ -1,17 +1,14 @@
 /**
- * @param {number[]} nums
- * @param {number} target
- * @param {number} start
+ * @param {number} num
  * @return {number}
  */
-var getMinDistance = function (nums, target, start) {
-  let array = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      let res = Math.abs(i - start);
-      array.push(res);
+var countDigits = function (num) {
+  let count = 0;
+  let str = String(num);
+  for (let i = 0; i < str.length; i++) {
+    if (num % str[i] == 0) {
+      count++;
     }
   }
-  // spread operator
-  return Math.min(...array);
+  return count;
 };
