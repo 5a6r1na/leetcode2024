@@ -8,8 +8,10 @@ var productExceptSelf = function (nums) {
   let suffix = [];
   let length = nums.length;
 
+  // [STEP]: helper variables
   prefix[0] = 1;
   suffix[length - 1] = 1;
+
   // [STEP]: calculate prefix
   for (let i = 1; i < length; i++) {
     prefix[i] = nums[i - 1] * prefix[i - 1];
