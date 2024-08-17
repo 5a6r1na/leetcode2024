@@ -1,8 +1,8 @@
-## 15. 3Sum
+## 39. Combination Sum
 
-📎 Link: [3Sum](https://leetcode.com/problems/3sum/description/)<br>
+📎 Link: [Combination Sum](https://leetcode.com/problems/combination-sum/description/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array, Two Pointers, Sorting<br>
+👩🏻‍💻 Topics: Array, Backtracking<br>
 
 =======================================================================================<br>
 
@@ -73,4 +73,4 @@ see solution.py
 > - Discuss any pros and cons of the solution
 
 - Time Complexity: O(N)
-- Space Complexity: O(1)?
+- Space Complexity: O(1)

@@ -1,8 +1,8 @@
-## 121. Best Time to Buy and Sell Stock
+## 56. Merge Intervals
 
-📎 Link: [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)<br>
-🟢 Difficulty: Easy<br>
-👩🏻‍💻 Topics: Array, Dynamic Programming<br>
+📎 Link: [Merge Intervals](https://leetcode.com/problems/merge-intervals/description/)<br>
+🟠 Difficulty: Medium<br>
+👩🏻‍💻 Topics: Array, Sorting<br>
 
 =======================================================================================<br>
 
@@ -73,4 +73,4 @@ see solution.py
 > - Discuss any pros and cons of the solution
 
 - Time Complexity: O(N)
-- Space Complexity: O(1)
+- Space Complexity: O(1)?
