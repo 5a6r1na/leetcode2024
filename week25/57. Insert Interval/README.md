@@ -1,8 +1,8 @@
-## 57. Insert Interval
+## 15. 3Sum
 
-📎 Link: [Insert Interval](https://leetcode.com/problems/insert-interval/description/)<br>
+📎 Link: [3Sum](https://leetcode.com/problems/3sum/description/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array<br>
+👩🏻‍💻 Topics: Array, Two Pointers, Sorting<br>
 
 =======================================================================================<br>
 
@@ -73,4 +73,4 @@ see solution.py
 > - Discuss any pros and cons of the solution
 
 - Time Complexity: O(N)
-- Space Complexity: O(1)
+- Space Complexity: O(1)?
