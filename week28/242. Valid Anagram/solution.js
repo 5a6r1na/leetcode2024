@@ -29,3 +29,17 @@ var isAnagram = function (s, t) {
   }
   return true;
 };
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+  // [STEP]: String to array, sort array, join as string to compare.
+  return s.split("").sort().join("") === t.split("").sort().join("");
+
+  /** [NOTE]: Comparing two arrays use == or === will only return true 
+    if both arrays refer to the exact same object in memory, 
+    not if they have the same contents.*/
+};
