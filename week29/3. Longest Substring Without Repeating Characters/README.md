@@ -1,8 +1,8 @@
-## 134. Gas Station
+## 3. Longest Substring Without Repeating Characters
 
-📎 Link: [Gas Station](https://leetcode.com/problems/combination-sum/description/)<br>
+📎 Link: [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array, Greedy<br>
+👩🏻‍💻 Topics: Hash Table, String, Sliding Window<br>
 
 =======================================================================================<br>
 
