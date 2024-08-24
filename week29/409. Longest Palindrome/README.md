@@ -1,8 +1,8 @@
-## 242. Valid Anagram
+## 409. Longest Palindrome
 
-📎 Link: [Valid Anagram](https://leetcode.com/problems/valid-anagram/description/)<br>
+📎 Link: [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/description/)<br>
 🟢 Difficulty: Easy<br>
-👩🏻‍💻 Topics: Hash Table, String, Sorting<br>
+👩🏻‍💻 Topics: Hash Table, String, Greedy<br>
 
 =======================================================================================<br>
 
