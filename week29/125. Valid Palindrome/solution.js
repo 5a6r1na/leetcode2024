@@ -1,25 +1,29 @@
 /**
- * @param {number[]} height
- * @return {number}
+ * @param {string} s
+ * @return {boolean}
  */
-var maxArea = function (height) {
-  let leftPointer = 0;
-  let rightPointer = height.length - 1;
-  let result = 0;
+var isPalindrome = function (s) {
+  let length = s.length;
 
-  while (leftPointer < rightPointer) {
-    // [STEP]: Calculate current pointer area
-    let area =
-      (rightPointer - leftPointer) *
-      Math.min(height[leftPointer], height[rightPointer]);
-    // [STEP]: Compare and replace for max area
-    result = Math.max(result, area);
-    // [CASE]: Move smaller pointer to increase chance of larger result
-    if (height[leftPointer] < height[rightPointer]) {
-      leftPointer++;
+  // [CASE]: If empty string, string is palindrome.
+  if (length == 0) return true;
+
+  // [STEP]: Uppercase to lower case and remove non-char.
+  let newList = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  let newLength = newList.length;
+
+  // [STEP]: Move pointers toward the middle.
+  let left = 0;
+  let right = newLength - 1;
+  for (let i = 0; i < newLength; i++) {
+    // [CASE]: If left != right, string is NOT palindrome.
+    if (newList[left] !== newList[right]) {
+      return false;
+      // [CASE]: If left == right, move pointer to next position.
     } else {
-      rightPointer--;
+      left++;
+      right--;
     }
   }
-  return result;
+  return true;
 };
