@@ -15,6 +15,7 @@ var floodFill = function (image, sr, sc, color) {
   dfsFillColor(image, sr, sc, orgColor, color);
   return image;
 
+  // [STEP]: Define dfs function to fill colors.
   function dfsFillColor(image, sr, sc, orgColor, color) {
     // [CASE]: Check if out of bounds.
     if (sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length) return;
