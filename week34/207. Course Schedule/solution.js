@@ -32,7 +32,7 @@ var canFinish = function (numCourses, prerequisites) {
 
     // [CASE]: If course does NOT have prerequisites, course can be completed.
     /**
-           [NOTE]: Check length equals to zero for empty arrays, 
+           [NOTE]: Check length equals to zero for empty arrays,
            since == [] checks for reference equality, not structural equality.
            No two array references are the same unless explicitly refer to the same array instance.
          */
@@ -49,7 +49,7 @@ var canFinish = function (numCourses, prerequisites) {
     // [STEP]: Examine ended, remove course from checkedCourse.
     checkedCourse.delete(course);
     /**
-        [CASE]: Course can be completed, set prerequisites of to empty so when visited again, 
+        [CASE]: Course can be completed, set prerequisites of to empty so when visited again,
         the program does NOT have to examine course again.
          */
     preMap.set(course, []);
