@@ -5,7 +5,7 @@
  */
 var exist = function (board, word) {
   // [CASE]: If board is empty, return 0;
-  if (!board || !board.length || !board[0].length) return 0;
+  if (!board || !board.length || !board[0].length) return;
 
   let index = 0;
   let row = board.length;
