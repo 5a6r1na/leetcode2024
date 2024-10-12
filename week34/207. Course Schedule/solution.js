@@ -25,7 +25,7 @@ var canFinish = function (numCourses, prerequisites) {
   // [STEP]: Tracked checked course in current path.
   let checkedCourse = new Set();
 
-  // [STEP]: Define dfs function to create clone.
+  // [STEP]: Define dfs function to check courses.
   function dfsCheckCoursePrereq(course) {
     // [CASE]: If course is in checkedCourse, loop is formed, course can NOT be completed.
     if (checkedCourse.has(course)) return false;
