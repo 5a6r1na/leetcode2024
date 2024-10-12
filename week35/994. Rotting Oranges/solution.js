@@ -10,8 +10,9 @@ var orangesRotting = function (grid) {
   // [STEP]: Track fresh oranges.
   let fresh = 0;
 
-  // [STEP]: Track grid setups.
+  // [STEP]: Track number of rows.
   let height = grid.length;
+  // [STEP]: Track number of columns.
   let width = grid[0].length;
 
   // [STEP]: Explore each cell in grid to find fresh oranges.
@@ -31,7 +32,13 @@ var orangesRotting = function (grid) {
 
   // [STEP]: Continue search if queue is NOT empty and fresh oranges exist.
   while (queue.length > 0 && fresh > 0) {
-    for (let i = 0; i < queue.length; i++) {
+    /**
+     * [STEP]: Track current level queue size.
+     * [NOTE]: queue.length changes dynamically during the loop, which will cause incorrect processing.
+     */
+    let size = queue.length;
+
+    for (let i = 0; i < size; i++) {
       // [STEP]: Get rotten orange coordinates from queue.
       let [row, col] = queue.shift();
 
@@ -49,7 +56,7 @@ var orangesRotting = function (grid) {
         let newCol = col + dy;
 
         // [CASE]: Check if the new position is within bounds.
-        if (newRow >= 0 && newRow < width && newCol >= 0 && newCol < height) {
+        if (newRow >= 0 && newRow < height && newCol >= 0 && newCol < width) {
           // [CASE: Check if current cell is a fresh orange.
           if (grid[newRow][newCol] == 1) {
             // [STEP]: Turn fresh orange to rotten orange.
