@@ -22,7 +22,7 @@
 
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
-1. [Stack](https://www.geeksforgeeks.org/two-pointers-technique/)<br>
+1. [Array](https://www.geeksforgeeks.org/two-pointers-technique/)<br>
 
 - **Two pointers algorithm is typically used for searching pairs in a sorted array.**. Two pointers approach optimizes code via time complexities conpare to loops.
 - The intuition behind Two Pointers is to traverse the array simultaneously. With pointers typically move at different speeds or in different directions.
