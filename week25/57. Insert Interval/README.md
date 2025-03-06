@@ -1,8 +1,8 @@
-## 15. 3Sum
+## 57. Insert Interval
 
-📎 Link: [3Sum](https://leetcode.com/problems/3sum/description/)<br>
+📎 Link: [Insert Interval](https://leetcode.com/problems/insert-interval/description/)<br>
 🟠 Difficulty: Medium<br>
-👩🏻‍💻 Topics: Array, Two Pointers, Sorting<br>
+👩🏻‍💻 Topics: Array<br>
 
 =======================================================================================<br>
 
